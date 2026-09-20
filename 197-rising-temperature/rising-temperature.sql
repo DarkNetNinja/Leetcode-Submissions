@@ -1,0 +1,5 @@
+select today.id
+from Weather today
+join Weather yesterday
+on today.recordDate = DATE_ADD(yesterday.recordDate,INTERVAL 1 DAY)
+where today.temperature > yesterday.temperature;
